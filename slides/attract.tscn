@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://eeux2q375heh"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ag2sm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1024.0
+color = Color(6.73831e-07, 0.400775, 0.28218, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 151
+text = "Starcraft Pinball"
+horizontal_alignment = 1
+vertical_alignment = 1
