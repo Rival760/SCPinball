@@ -1,23 +1,53 @@
-[gd_scene load_steps=2 format=3 uid="uid://eeux2q375heh"]
+[gd_scene load_steps=4 format=3 uid="uid://eeux2q375heh"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
+[ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract_kerrigan.jpg" id="2_es7b4"]
+[ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_taiwo"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ag2sm")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 1024.0
-color = Color(6.73831e-07, 0.400775, 0.28218, 1)
+[node name="AttractKerrigan" type="Sprite2D" parent="."]
+position = Vector2(659, 562)
+scale = Vector2(0.919323, 0.935417)
+texture = ExtResource("2_es7b4")
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 151
+[node name="Starcraft Pinball" type="Label" parent="."]
+offset_left = -67.4843
+offset_top = -2.86249
+offset_right = 1328.52
+offset_bottom = 210.138
+theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 37
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 91
 text = "Starcraft Pinball"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Code version" type="Label" parent="."]
+offset_top = -3.28
+offset_right = 1262.0
+offset_bottom = 1005.72
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 18
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 37
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 26
+text = "Code v 0.1  
+Brice Ambrecht  
+Project JAN 2025 - Current"
+horizontal_alignment = 2
+vertical_alignment = 2
