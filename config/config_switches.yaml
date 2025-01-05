@@ -1,0 +1,33 @@
+#config_version=6
+
+  # Cabinet Switches
+switches:
+  s_left_flipper:
+    number:
+    tags: left_flipper
+  s_right_flipper:
+    number:
+    tags: right_flipper
+  s_trough1:
+    number: 1
+  s_trough2:
+    number: 2
+  s_trough3:
+    number: 3
+  s_trough4:
+    number: 4
+  s_trough5:
+    number: 5
+  s_trough6:
+    number: 6
+  s_trough_jam:
+    number: 7
+  s_plunger:
+    number: 10
+  s_start:
+    number: 11
+    tags: start
+  s_right_inlane:
+    number: 12
+    tags: playfield_active
+    

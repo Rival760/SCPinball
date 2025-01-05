@@ -1,12 +1,36 @@
 #config_version=6
 
-## MPF Main Machine Config File
-#
-# This file defines your system-wide properties like switches,
-# drivers, ball devices, hardware platforms, and more. You can
-# include everything here, or create sub-config files to be
-# imported and merged with this one.
+hardware:
+  platform: smart_virtual
 
-modes:
-  - attract
-  - base
+
+
+virtual_platform_start_active_switches:
+  - s_trough1
+  - s_trough2
+  - s_trough3
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: bd_plunger
+
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_right_flipper
+
+displays:
+  window:
+    width: 800
+    height: 600
+
+config:
+  - config_switches.yaml
+  - config_ball_devices.yaml
+  - config_coils.yaml

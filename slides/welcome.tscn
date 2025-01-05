@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5324wqy6eai0"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_u7nww"]
+[ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="2_mk7v0"]
+
+[node name="Welcome" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u7nww")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1284.0
+offset_bottom = 1027.0
+color = Color(0.858752, 0.585184, 0.0586879, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 66.0
+offset_right = 1284.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("2_mk7v0")
+theme_override_font_sizes/font_size = 136
+text = "Rival Pinball"

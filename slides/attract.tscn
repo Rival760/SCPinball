@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://eeux2q375heh"]
+[gd_scene load_steps=7 format=3 uid="uid://eeux2q375heh"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
 [ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract_kerrigan.jpg" id="2_es7b4"]
 [ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_taiwo"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_fyot2"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_nki8n"]
+[ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="6_2spuy"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -14,24 +17,8 @@ position = Vector2(659, 562)
 scale = Vector2(0.919323, 0.935417)
 texture = ExtResource("2_es7b4")
 
-[node name="Starcraft Pinball" type="Label" parent="."]
-offset_left = -67.4843
-offset_top = -2.86249
-offset_right = 1328.52
-offset_bottom = 210.138
-theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/outline_size = 20
-theme_override_constants/shadow_outline_size = 37
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 91
-text = "Starcraft Pinball"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Code version" type="Label" parent="."]
+layout_mode = 0
 offset_top = -3.28
 offset_right = 1262.0
 offset_bottom = 1005.72
@@ -51,3 +38,46 @@ Brice Ambrecht
 Project JAN 2025 - Current"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="MPFCarousel" type="Node2D" parent="."]
+script = ExtResource("4_fyot2")
+carousel_name = "attract"
+
+[node name="mpf_logo" type="Sprite2D" parent="MPFCarousel"]
+position = Vector2(675, 529)
+texture = ExtResource("6_2spuy")
+
+[node name="title" type="Label" parent="MPFCarousel"]
+offset_top = -3.0
+offset_right = 1284.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 37
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 91
+text = "Starcraft Pinball"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="credits" type="Label" parent="MPFCarousel"]
+offset_top = -3.0
+offset_right = 1284.0
+offset_bottom = 529.0
+theme_override_colors/font_color = Color(0.785035, 0.402725, 0.0808977, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 37
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 91
+text = "SAMPLE TEXT BRICE"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "credits_string"
