@@ -13,8 +13,8 @@ anchors_preset = 0
 script = ExtResource("1_ag2sm")
 
 [node name="AttractKerrigan" type="Sprite2D" parent="."]
-position = Vector2(659, 562)
-scale = Vector2(0.919323, 0.935417)
+position = Vector2(570, 529)
+scale = Vector2(0.85, 0.865)
 texture = ExtResource("2_es7b4")
 
 [node name="Code version" type="Label" parent="."]
@@ -44,7 +44,9 @@ script = ExtResource("4_fyot2")
 carousel_name = "attract"
 
 [node name="mpf_logo" type="Sprite2D" parent="MPFCarousel"]
+visible = false
 position = Vector2(675, 529)
+scale = Vector2(2, 2)
 texture = ExtResource("6_2spuy")
 
 [node name="title" type="Label" parent="MPFCarousel"]
@@ -64,6 +66,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="credits" type="Label" parent="MPFCarousel"]
+visible = false
 offset_top = -3.0
 offset_right = 1284.0
 offset_bottom = 529.0
@@ -75,9 +78,153 @@ theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 37
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 91
-text = "SAMPLE TEXT BRICE"
+text = "Credits Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_nki8n")
 variable_type = 2
 variable_name = "credits_string"
+
+[node name="last_scores_1p" type="Node2D" parent="MPFCarousel"]
+visible = false
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_1p"]
+offset_right = 1284.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 80
+text = "123456"
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="last_scores_2p" type="Node2D" parent="MPFCarousel"]
+visible = false
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_2p"]
+offset_right = 1284.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 80
+text = "123456"
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_2p"]
+offset_top = 497.0
+offset_right = 1284.0
+offset_bottom = 1026.0
+theme_override_font_sizes/font_size = 80
+text = "43434"
+horizontal_alignment = 2
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="last_scores_3p" type="Node2D" parent="MPFCarousel"]
+visible = false
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_3p"]
+offset_right = 1284.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 80
+text = "123456"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_3p"]
+offset_top = 497.0
+offset_right = 1284.0
+offset_bottom = 1026.0
+theme_override_font_sizes/font_size = 80
+text = "43434"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="player3_score" type="Label" parent="MPFCarousel/last_scores_3p"]
+offset_top = 497.0
+offset_right = 1284.0
+offset_bottom = 1026.0
+theme_override_font_sizes/font_size = 80
+text = "555533"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player3_score"
+comma_separate = true
+min_digits = 2
+
+[node name="last_scores_4p" type="Node2D" parent="MPFCarousel"]
+visible = false
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_4p"]
+offset_right = 1284.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 80
+text = "123456"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_4p"]
+offset_top = 497.0
+offset_right = 1284.0
+offset_bottom = 1026.0
+theme_override_font_sizes/font_size = 80
+text = "43434"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="player3_score" type="Label" parent="MPFCarousel/last_scores_4p"]
+offset_top = 497.0
+offset_right = 1284.0
+offset_bottom = 1026.0
+theme_override_font_sizes/font_size = 80
+text = "555533"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player3_score"
+comma_separate = true
+min_digits = 2
+
+[node name="player4_score" type="Label" parent="MPFCarousel/last_scores_4p"]
+offset_top = 497.0
+offset_right = 1284.0
+offset_bottom = 1026.0
+theme_override_font_sizes/font_size = 80
+text = "666777"
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player4_score"
+comma_separate = true
+min_digits = 2
