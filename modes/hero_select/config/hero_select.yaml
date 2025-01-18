@@ -12,9 +12,9 @@ mode_settings:
         - Jim_Raynor
         - Kerrigan
         #- Zeratul
-  select_item_events: s_start_active
-  next_item_events: s_flipper_right_active
-  previous_item_events: s_flipper_left_active
+  select_item_events: s_action_active
+  next_item_events: s_right_flipper_active
+  previous_item_events: s_left_flipper_active
 
 #variable_player:
   hero_select_Jim_Raynor_highlighted:
