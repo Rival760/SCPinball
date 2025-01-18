@@ -1,0 +1,33 @@
+#config_version=6
+
+mode:
+    start_events: start_hero_select_mode, show_hero_select_mode
+    stop_events: hero_select_item_selected
+    game_mode: false
+    code: mpf.modes.carousel.code.carousel.Carousel
+    priority: 120
+
+mode_settings:
+  selectable_items:
+        - Jim_Raynor
+        - Kerrigan
+        #- Zeratul
+  select_item_events: s_start_active
+  next_item_events: s_flipper_right_active
+  previous_item_events: s_flipper_left_active
+
+#variable_player:
+  hero_select_Jim_Raynor_highlighted:
+    highlighted_hero:
+      string: "Jim_Raynor"
+      action: set
+  hero_select_Kerrigan_highlighted:
+    highlighted_hero:
+      string: "Kerrigan"
+      action: set
+
+
+slide_player:
+  mode_hero_select_started: hero_select
+  #widgets:
+        

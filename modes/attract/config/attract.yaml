@@ -23,6 +23,9 @@ sound_player:
   mode_attract_started:
     terran:
       bus: music
+
+event_player:
+  s_start_active: sw_add_player
     
 timers:
   attract_carousel_timer:

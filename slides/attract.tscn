@@ -50,6 +50,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("6_2spuy")
 
 [node name="title" type="Label" parent="MPFCarousel"]
+visible = false
 offset_top = -3.0
 offset_right = 1284.0
 offset_bottom = 210.0
@@ -66,7 +67,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="credits" type="Label" parent="MPFCarousel"]
-visible = false
 offset_top = -3.0
 offset_right = 1284.0
 offset_bottom = 529.0
@@ -86,7 +86,6 @@ variable_type = 2
 variable_name = "credits_string"
 
 [node name="last_scores_1p" type="Node2D" parent="MPFCarousel"]
-visible = false
 
 [node name="player1_score" type="Label" parent="MPFCarousel/last_scores_1p"]
 offset_right = 1284.0
@@ -101,7 +100,6 @@ comma_separate = true
 min_digits = 2
 
 [node name="last_scores_2p" type="Node2D" parent="MPFCarousel"]
-visible = false
 
 [node name="player1_score" type="Label" parent="MPFCarousel/last_scores_2p"]
 offset_right = 1284.0
@@ -129,7 +127,6 @@ comma_separate = true
 min_digits = 2
 
 [node name="last_scores_3p" type="Node2D" parent="MPFCarousel"]
-visible = false
 
 [node name="player1_score" type="Label" parent="MPFCarousel/last_scores_3p"]
 offset_right = 1284.0
@@ -173,7 +170,6 @@ comma_separate = true
 min_digits = 2
 
 [node name="last_scores_4p" type="Node2D" parent="MPFCarousel"]
-visible = false
 
 [node name="player1_score" type="Label" parent="MPFCarousel/last_scores_4p"]
 offset_right = 1284.0

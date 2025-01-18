@@ -34,3 +34,11 @@ config:
   - config_switches.yaml
   - config_ball_devices.yaml
   - config_coils.yaml
+
+game:
+  add_player_switch_tag: add_player
+
+modes:
+  - attract
+  - base
+  - hero_select

@@ -7,3 +7,8 @@ mode:
   start_events: ball_starting
   stop_events: ball_will_end
   priority: 100
+
+event_player:
+  mode_base_started:
+    - start_hero_select_mode
+  s_start_active: sw_add_player
