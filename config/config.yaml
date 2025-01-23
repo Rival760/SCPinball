@@ -42,3 +42,10 @@ modes:
   - attract
   - base
   - hero_select
+
+#slide_player:
+  #init_done: attract
+  #ball_started:
+    #widgets:
+      #type: text
+      #text: PLAYER (number) BALL (ball)

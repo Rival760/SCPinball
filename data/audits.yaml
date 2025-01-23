@@ -1,32 +1,27 @@
 events:
   game_ended: 0
-  game_started: 36
+  game_started: 51
 missing_switches:
-  s_plunger: 36
-  s_right_inlane: 36
-  s_trough1: 36
-  s_trough2: 36
-  s_trough3: 36
-  s_trough4: 36
-  s_trough5: 36
-  s_trough6: 36
-  s_trough_jam: 36
+  s_right_flipper: 1
+  s_trough1: 1
+  s_trough6: 51
+  s_trough_jam: 51
 player:
   score:
     average: 0
     top: []
     total: 0
 switches:
-  s_action: 1
-  s_left_flipper: 218
-  s_plunger: 0
-  s_right_flipper: 219
-  s_right_inlane: 0
-  s_start: 50
-  s_trough1: 0
-  s_trough2: 0
-  s_trough3: 0
-  s_trough4: 0
-  s_trough5: 0
+  s_action: 14
+  s_left_flipper: 257
+  s_plunger: 8
+  s_right_flipper: 266
+  s_right_inlane: 26
+  s_start: 60
+  s_trough1: 5
+  s_trough2: 8
+  s_trough3: 5
+  s_trough4: 6
+  s_trough5: 7
   s_trough6: 0
   s_trough_jam: 0

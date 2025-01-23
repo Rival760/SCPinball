@@ -1,21 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://eeux2q375heh"]
+[gd_scene load_steps=7 format=3 uid="uid://dnqjaam7i8r1b"]
 
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
-[ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract_kerrigan.jpg" id="2_es7b4"]
-[ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_taiwo"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_fyot2"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_nki8n"]
-[ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="6_2spuy"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_nmca0"]
+[ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract_kerrigan.jpg" id="2_1s7rg"]
+[ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_4jurp"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_m4u0e"]
+[ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="5_usdy2"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_eq8na"]
 
-[node name="Attract" type="Control"]
+[node name="Base" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_ag2sm")
+script = ExtResource("1_nmca0")
 
 [node name="AttractKerrigan" type="Sprite2D" parent="."]
 position = Vector2(570, 529)
 scale = Vector2(0.85, 0.865)
-texture = ExtResource("2_es7b4")
+texture = ExtResource("2_1s7rg")
 
 [node name="Code version" type="Label" parent="."]
 layout_mode = 0
@@ -31,7 +31,7 @@ theme_override_constants/line_spacing = 18
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 37
-theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_fonts/font = ExtResource("3_4jurp")
 theme_override_font_sizes/font_size = 26
 text = "Code v 0.1  
 Brice Ambrecht  
@@ -39,17 +39,17 @@ Project JAN 2025 - Current"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Attract" type="Node2D" parent="."]
-script = ExtResource("4_fyot2")
+[node name="Base" type="Node2D" parent="."]
+script = ExtResource("4_m4u0e")
 carousel_name = "attract"
 
-[node name="mpf_logo" type="Sprite2D" parent="Attract"]
+[node name="mpf_logo" type="Sprite2D" parent="Base"]
 visible = false
 position = Vector2(675, 529)
 scale = Vector2(2, 2)
-texture = ExtResource("6_2spuy")
+texture = ExtResource("5_usdy2")
 
-[node name="title" type="Label" parent="Attract"]
+[node name="title" type="Label" parent="Base"]
 visible = false
 offset_top = -3.0
 offset_right = 1284.0
@@ -60,13 +60,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 37
-theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_fonts/font = ExtResource("3_4jurp")
 theme_override_font_sizes/font_size = 91
 text = "Starcraft Pinball"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="credits" type="Label" parent="Attract"]
+[node name="credits" type="Label" parent="Base"]
 visible = false
 offset_top = -3.0
 offset_right = 1284.0
@@ -77,72 +77,72 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 37
-theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_fonts/font = ExtResource("3_4jurp")
 theme_override_font_sizes/font_size = 91
 text = "Credits Text"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "credits_string"
 
-[node name="last_scores_1p" type="Node2D" parent="Attract"]
+[node name="last_scores_1p" type="Node2D" parent="Base"]
 
-[node name="player1_score" type="Label" parent="Attract/last_scores_1p"]
+[node name="player1_score" type="Label" parent="Base/last_scores_1p"]
 offset_right = 1284.0
 offset_bottom = 529.0
 theme_override_font_sizes/font_size = 80
 text = "123456"
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="last_scores_2p" type="Node2D" parent="Attract"]
+[node name="last_scores_2p" type="Node2D" parent="Base"]
 
-[node name="player1_score" type="Label" parent="Attract/last_scores_2p"]
+[node name="player1_score" type="Label" parent="Base/last_scores_2p"]
 offset_right = 1284.0
 offset_bottom = 529.0
 theme_override_font_sizes/font_size = 80
 text = "123456"
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player2_score" type="Label" parent="Attract/last_scores_2p"]
+[node name="player2_score" type="Label" parent="Base/last_scores_2p"]
 offset_top = 497.0
 offset_right = 1284.0
 offset_bottom = 1026.0
 theme_override_font_sizes/font_size = 80
 text = "43434"
 horizontal_alignment = 2
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player2_score"
 comma_separate = true
 min_digits = 2
 
-[node name="last_scores_3p" type="Node2D" parent="Attract"]
+[node name="last_scores_3p" type="Node2D" parent="Base"]
 
-[node name="player1_score" type="Label" parent="Attract/last_scores_3p"]
+[node name="player1_score" type="Label" parent="Base/last_scores_3p"]
 offset_right = 1284.0
 offset_bottom = 529.0
 theme_override_font_sizes/font_size = 80
 text = "123456"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player2_score" type="Label" parent="Attract/last_scores_3p"]
+[node name="player2_score" type="Label" parent="Base/last_scores_3p"]
 offset_top = 497.0
 offset_right = 1284.0
 offset_bottom = 1026.0
@@ -150,13 +150,13 @@ theme_override_font_sizes/font_size = 80
 text = "43434"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player2_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player3_score" type="Label" parent="Attract/last_scores_3p"]
+[node name="player3_score" type="Label" parent="Base/last_scores_3p"]
 offset_top = 497.0
 offset_right = 1284.0
 offset_bottom = 1026.0
@@ -164,28 +164,28 @@ theme_override_font_sizes/font_size = 80
 text = "555533"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player3_score"
 comma_separate = true
 min_digits = 2
 
-[node name="last_scores_4p" type="Node2D" parent="Attract"]
+[node name="last_scores_4p" type="Node2D" parent="Base"]
 
-[node name="player1_score" type="Label" parent="Attract/last_scores_4p"]
+[node name="player1_score" type="Label" parent="Base/last_scores_4p"]
 offset_right = 1284.0
 offset_bottom = 529.0
 theme_override_font_sizes/font_size = 80
 text = "123456"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player2_score" type="Label" parent="Attract/last_scores_4p"]
+[node name="player2_score" type="Label" parent="Base/last_scores_4p"]
 offset_top = 497.0
 offset_right = 1284.0
 offset_bottom = 1026.0
@@ -193,13 +193,13 @@ theme_override_font_sizes/font_size = 80
 text = "43434"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player2_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player3_score" type="Label" parent="Attract/last_scores_4p"]
+[node name="player3_score" type="Label" parent="Base/last_scores_4p"]
 offset_top = 497.0
 offset_right = 1284.0
 offset_bottom = 1026.0
@@ -207,20 +207,20 @@ theme_override_font_sizes/font_size = 80
 text = "555533"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player3_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player4_score" type="Label" parent="Attract/last_scores_4p"]
+[node name="player4_score" type="Label" parent="Base/last_scores_4p"]
 offset_top = 497.0
 offset_right = 1284.0
 offset_bottom = 1026.0
 theme_override_font_sizes/font_size = 80
 text = "666777"
 vertical_alignment = 1
-script = ExtResource("5_nki8n")
+script = ExtResource("6_eq8na")
 variable_type = 2
 variable_name = "player4_score"
 comma_separate = true

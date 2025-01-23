@@ -12,3 +12,17 @@ event_player:
   mode_base_started:
     - start_hero_select_mode
   s_start_active: sw_add_player
+
+sound_player:
+  mode_base_started:
+    terran:
+      bus: music
+
+slide_player:
+  mode_base_started: base
+
+variable_player:
+  s_right_inlane_active:
+    score: 100
+  s_left_flipper_active:
+    score: 1000
