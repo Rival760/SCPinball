@@ -12,6 +12,8 @@ mode_settings:
     - last_scores_3p{machine.player3_score and not machine.player4_score}
     - last_scores_4p{machine.player4_score}
     - mpf_logo
+    - blizzard_logo
+    - starcraft_logo
     
   next_item_events: s_right_flipper_active, timer_attract_carousel_timer_complete
   previous_item_events: s_left_flipper_active

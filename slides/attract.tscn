@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://eeux2q375heh"]
+[gd_scene load_steps=9 format=3 uid="uid://eeux2q375heh"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
 [ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract_kerrigan.jpg" id="2_es7b4"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_fyot2"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_nki8n"]
 [ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="6_2spuy"]
+[ext_resource type="Texture2D" uid="uid://dltmernif6mb4" path="res://data/images/Blizzard_Entertainment_2015_blue.svg" id="7_h4bmy"]
+[ext_resource type="Texture2D" uid="uid://bnyavkfekag3i" path="res://data/images/StarCraft_Logo.png" id="8_viow0"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -13,15 +15,16 @@ anchors_preset = 0
 script = ExtResource("1_ag2sm")
 
 [node name="AttractKerrigan" type="Sprite2D" parent="."]
-position = Vector2(944, 600)
-scale = Vector2(0.982, 1)
+position = Vector2(688, 448)
+scale = Vector2(0.761, 0.775)
 texture = ExtResource("2_es7b4")
 
 [node name="Code version" type="Label" parent="."]
 layout_mode = 0
-offset_top = -3.28
-offset_right = 1262.0
-offset_bottom = 1005.72
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1344.0
+offset_bottom = 744.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
@@ -51,9 +54,9 @@ texture = ExtResource("6_2spuy")
 
 [node name="title" type="Label" parent="Attract"]
 visible = false
-offset_top = -3.0
-offset_right = 1284.0
-offset_bottom = 210.0
+offset_top = 280.0
+offset_right = 1364.0
+offset_bottom = 493.0
 theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -66,11 +69,14 @@ text = "Starcraft Pinball"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Sprite2D" type="Sprite2D" parent="Attract"]
+visible = false
+scale = Vector2(1.285, 1.285)
+
 [node name="credits" type="Label" parent="Attract"]
 visible = false
-offset_top = -3.0
-offset_right = 1284.0
-offset_bottom = 529.0
+offset_right = 1352.0
+offset_bottom = 768.0
 theme_override_colors/font_color = Color(0.785035, 0.402725, 0.0808977, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -86,35 +92,39 @@ script = ExtResource("5_nki8n")
 variable_type = 2
 variable_name = "credits_string"
 
-[node name="last_scores_1p" type="Node2D" parent="Attract"]
+[node name="blizzard_logo" type="Sprite2D" parent="Attract"]
+visible = false
+position = Vector2(732, 382)
+texture = ExtResource("7_h4bmy")
 
-[node name="player1_score" type="Label" parent="Attract/last_scores_1p"]
-offset_right = 1284.0
-offset_bottom = 529.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 80
-text = "123456"
-vertical_alignment = 1
-script = ExtResource("5_nki8n")
-variable_type = 2
-variable_name = "player1_score"
-comma_separate = true
-min_digits = 2
+[node name="starcraft_logo3" type="Sprite2D" parent="Attract"]
+visible = false
+position = Vector2(732, 382)
+texture = ExtResource("7_h4bmy")
+
+[node name="starcraft_logo" type="Sprite2D" parent="Attract"]
+position = Vector2(665, 442)
+scale = Vector2(1.57, 1.57)
+texture = ExtResource("8_viow0")
+
+[node name="last_scores_1p" type="Node2D" parent="Attract"]
+visible = false
 
 [node name="Player 1 Score" type="Label" parent="Attract/last_scores_1p"]
-offset_left = 3.0
+offset_left = 17.0
 offset_top = 155.0
-offset_right = 382.0
+offset_right = 582.0
 offset_bottom = 315.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 1 Score"
 
-[node name="last_scores_2p" type="Node2D" parent="Attract"]
-
-[node name="player1_score" type="Label" parent="Attract/last_scores_2p"]
-offset_right = 1284.0
-offset_bottom = 529.0
+[node name="player1_score" type="Label" parent="Attract/last_scores_1p/Player 1 Score"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -155.0
+offset_right = 1281.0
+offset_bottom = 374.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 80
 text = "123456"
@@ -125,10 +135,24 @@ variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player2_score" type="Label" parent="Attract/last_scores_2p"]
-offset_top = 210.0
-offset_right = 1284.0
-offset_bottom = 1026.0
+[node name="last_scores_2p" type="Node2D" parent="Attract"]
+visible = false
+
+[node name="Player 2 Score" type="Label" parent="Attract/last_scores_2p"]
+offset_left = 752.0
+offset_top = 155.0
+offset_right = 1349.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 56
+text = "Player 2 Score"
+horizontal_alignment = 2
+
+[node name="player2_score" type="Label" parent="Attract/last_scores_2p/Player 2 Score"]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 588.0
+offset_bottom = 181.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 80
 text = "43434"
@@ -139,30 +163,21 @@ variable_name = "player2_score"
 comma_separate = true
 min_digits = 2
 
-[node name="Player 1 Score2" type="Label" parent="Attract/last_scores_2p"]
-offset_left = 3.0
+[node name="Player 1 Score" type="Label" parent="Attract/last_scores_2p"]
+offset_left = 17.0
 offset_top = 155.0
-offset_right = 382.0
+offset_right = 582.0
 offset_bottom = 315.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 1 Score"
 
-[node name="Player 2 Score" type="Label" parent="Attract/last_scores_2p"]
-offset_left = 895.0
-offset_top = 155.0
-offset_right = 1492.0
-offset_bottom = 315.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 56
-text = "Player 2 Score"
-horizontal_alignment = 2
-
-[node name="last_scores_3p" type="Node2D" parent="Attract"]
-
-[node name="player1_score" type="Label" parent="Attract/last_scores_3p"]
-offset_right = 1284.0
-offset_bottom = 529.0
+[node name="player1_score" type="Label" parent="Attract/last_scores_2p/Player 1 Score"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -155.0
+offset_right = 1281.0
+offset_bottom = 374.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 80
 text = "123456"
@@ -173,14 +188,27 @@ variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player2_score" type="Label" parent="Attract/last_scores_3p"]
-offset_top = -14.0
-offset_right = 1284.0
-offset_bottom = 515.0
+[node name="last_scores_3p" type="Node2D" parent="Attract"]
+visible = false
+
+[node name="Player 1 Score" type="Label" parent="Attract/last_scores_3p"]
+offset_left = 17.0
+offset_top = 155.0
+offset_right = 582.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 56
+text = "Player 1 Score"
+
+[node name="player1_score" type="Label" parent="Attract/last_scores_3p/Player 1 Score"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -155.0
+offset_right = 1281.0
+offset_bottom = 374.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 80
-text = "43434"
-horizontal_alignment = 2
+text = "123456"
 vertical_alignment = 1
 script = ExtResource("5_nki8n")
 variable_type = 2
@@ -188,104 +216,77 @@ variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player3_score" type="Label" parent="Attract/last_scores_3p"]
-offset_top = 497.0
-offset_right = 1284.0
-offset_bottom = 1026.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 80
-text = "555533"
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("5_nki8n")
-variable_type = 2
-variable_name = "player3_score"
-comma_separate = true
-min_digits = 2
-
-[node name="Player 1 Score3" type="Label" parent="Attract/last_scores_3p"]
-offset_left = 3.0
+[node name="Player 2 Score" type="Label" parent="Attract/last_scores_3p"]
+offset_left = 752.0
 offset_top = 155.0
-offset_right = 382.0
-offset_bottom = 315.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 56
-text = "Player 1 Score"
-
-[node name="Player 2 Score2" type="Label" parent="Attract/last_scores_3p"]
-offset_left = 895.0
-offset_top = 155.0
-offset_right = 1274.0
+offset_right = 1349.0
 offset_bottom = 315.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 2 Score"
+horizontal_alignment = 2
 
-[node name="Player 3 Score" type="Label" parent="Attract/last_scores_3p"]
-offset_left = 895.0
-offset_top = 641.0
-offset_right = 1274.0
-offset_bottom = 801.0
+[node name="player2_score" type="Label" parent="Attract/last_scores_3p/Player 2 Score"]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 588.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 80
+text = "43434"
+horizontal_alignment = 2
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="Player3" type="Label" parent="Attract/last_scores_3p"]
+offset_left = 17.0
+offset_top = 432.0
+offset_right = 614.0
+offset_bottom = 592.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 3 Score"
+horizontal_alignment = 2
 
-[node name="last_scores_4p" type="Node2D" parent="Attract"]
-
-[node name="player1_score" type="Label" parent="Attract/last_scores_4p"]
-visible = false
-offset_right = 1284.0
-offset_bottom = 529.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 80
-text = "123456"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_nki8n")
-variable_type = 2
-variable_name = "player1_score"
-comma_separate = true
-min_digits = 2
-
-[node name="player2_score" type="Label" parent="Attract/last_scores_4p"]
-visible = false
-offset_top = 497.0
-offset_right = 1284.0
-offset_bottom = 1026.0
+[node name="player3_score" type="Label" parent="Attract/last_scores_3p/Player3"]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 588.0
+offset_bottom = 181.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 80
 text = "43434"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_nki8n")
-variable_type = 2
-variable_name = "player2_score"
-comma_separate = true
-min_digits = 2
-
-[node name="player3_score" type="Label" parent="Attract/last_scores_4p"]
-visible = false
-offset_top = 497.0
-offset_right = 1284.0
-offset_bottom = 1026.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 80
-text = "555533"
-horizontal_alignment = 2
-vertical_alignment = 1
 script = ExtResource("5_nki8n")
 variable_type = 2
 variable_name = "player3_score"
 comma_separate = true
 min_digits = 2
 
-[node name="player4_score" type="Label" parent="Attract/last_scores_4p"]
-offset_top = 497.0
-offset_right = 1284.0
-offset_bottom = 1026.0
+[node name="last_scores_4p" type="Node2D" parent="Attract"]
+visible = false
+
+[node name="Player 4 Score3" type="Label" parent="Attract/last_scores_4p"]
+offset_left = 752.0
+offset_top = 432.0
+offset_right = 1354.0
+offset_bottom = 495.0
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 56
+text = "Player 4 Score"
+
+[node name="player4_score" type="Label" parent="Attract/last_scores_4p/Player 4 Score3"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 24.0
+offset_right = 592.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 80
 text = "666777"
+horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("5_nki8n")
 variable_type = 2
@@ -293,38 +294,52 @@ variable_name = "player4_score"
 comma_separate = true
 min_digits = 2
 
-[node name="Player 1 Score4" type="Label" parent="Attract/last_scores_4p"]
-offset_left = 3.0
+[node name="Player 1 Score" type="Label" parent="Attract/last_scores_4p"]
+offset_left = 17.0
 offset_top = 155.0
-offset_right = 382.0
+offset_right = 582.0
 offset_bottom = 315.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 1 Score"
 
-[node name="Player 2 Score3" type="Label" parent="Attract/last_scores_4p"]
-offset_left = 895.0
+[node name="player1_score" type="Label" parent="Attract/last_scores_4p/Player 1 Score"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -155.0
+offset_right = 1281.0
+offset_bottom = 374.0
+theme_override_fonts/font = ExtResource("3_taiwo")
+theme_override_font_sizes/font_size = 80
+text = "123456"
+vertical_alignment = 1
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="Player 2 Score" type="Label" parent="Attract/last_scores_4p"]
+offset_left = 752.0
 offset_top = 155.0
-offset_right = 1274.0
+offset_right = 1349.0
 offset_bottom = 315.0
 theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 2 Score"
+horizontal_alignment = 2
 
-[node name="Player 3 Score2" type="Label" parent="Attract/last_scores_4p"]
-offset_left = 895.0
-offset_top = 641.0
-offset_right = 1274.0
-offset_bottom = 801.0
+[node name="player2_score" type="Label" parent="Attract/last_scores_4p/Player 2 Score"]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 588.0
+offset_bottom = 181.0
 theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 56
-text = "Player 3 Score"
-
-[node name="Player 4 Score3" type="Label" parent="Attract/last_scores_4p"]
-offset_left = 3.0
-offset_top = 641.0
-offset_right = 382.0
-offset_bottom = 801.0
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 56
-text = "Player 4 Score"
+theme_override_font_sizes/font_size = 80
+text = "43434"
+horizontal_alignment = 2
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2

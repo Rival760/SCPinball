@@ -13,16 +13,16 @@ anchors_preset = 0
 script = ExtResource("1_nmca0")
 
 [node name="base" type="Sprite2D" parent="."]
-position = Vector2(805, 547)
-scale = Vector2(0.663, 0.554)
+position = Vector2(682, 381)
+scale = Vector2(0.463, 0.386)
 texture = ExtResource("2_xbsjx")
 
 [node name="Player 1 Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 795.0
-offset_right = 539.0
-offset_bottom = 883.0
+offset_left = 28.0
+offset_top = 666.0
+offset_right = 543.0
+offset_bottom = 754.0
 theme_override_fonts/font = ExtResource("3_vn11m")
 theme_override_font_sizes/font_size = 51
 text = "Player 1 Score"
@@ -43,10 +43,10 @@ min_digits = 2
 
 [node name="Player 2 Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = 721.0
-offset_top = 795.0
-offset_right = 1265.0
-offset_bottom = 883.0
+offset_left = 777.0
+offset_top = 659.0
+offset_right = 1321.0
+offset_bottom = 747.0
 theme_override_fonts/font = ExtResource("3_vn11m")
 theme_override_font_sizes/font_size = 51
 text = "Player 2 Score"
