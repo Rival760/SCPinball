@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk5ujfkr0ylh7"]
+[gd_scene load_steps=9 format=3 uid="uid://dk5ujfkr0ylh7"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_fog0k"]
+[ext_resource type="Texture2D" uid="uid://b1k5esrf5alti" path="res://data/images/StarCraft II Screenshot 2025.01.28 - 19.04.45.50.png" id="4_bsie6"]
 [ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="4_ifefo"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_oww14"]
 [ext_resource type="Texture2D" uid="uid://ccrg5nplj3jh5" path="res://data/images/Jim_Raynor.jpg" id="6_2jut1"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_42e6u"]
 [ext_resource type="Texture2D" uid="uid://n0c0qjk13754" path="res://data/images/Kerrigan.jpg" id="7_huta8"]
+[ext_resource type="Texture2D" uid="uid://b88oiqr1og4rs" path="res://data/images/StarCraft II Screenshot 2025.01.28 - 19.04.58.34.png" id="8_ionki"]
 
 [node name="hero_select" type="Control"]
 layout_mode = 3
@@ -26,10 +28,17 @@ variable_type = 2
 variable_name = "Jim_Raynor"
 
 [node name="JimRaynor" type="Sprite2D" parent="MPFCarousel/Jim_Raynor"]
+visible = false
 position = Vector2(656, 540)
 texture = ExtResource("6_2jut1")
 
+[node name="StarCraftIiScreenshot2025_01_28-19_04_45_50" type="Sprite2D" parent="MPFCarousel/Jim_Raynor"]
+position = Vector2(150, 541)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("4_bsie6")
+
 [node name="Choose Your Hero2" type="Label" parent="MPFCarousel/Jim_Raynor"]
+layout_mode = 0
 offset_right = 1577.0
 offset_bottom = 499.0
 theme_override_fonts/font = ExtResource("4_ifefo")
@@ -37,6 +46,7 @@ theme_override_font_sizes/font_size = 91
 text = "Choose your hero"
 
 [node name="Kerrigan" type="Label" parent="MPFCarousel"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("6_42e6u")
@@ -47,8 +57,13 @@ variable_name = "kerrigan"
 position = Vector2(584, 541)
 texture = ExtResource("7_huta8")
 
+[node name="StarCraftIiScreenshot2025_01_28-19_04_58_34" type="Sprite2D" parent="MPFCarousel/Kerrigan"]
+position = Vector2(221, 561)
+texture = ExtResource("8_ionki")
+
 [node name="Choose Your Hero" type="Label" parent="MPFCarousel/Kerrigan"]
-offset_right = 1577.0
+layout_mode = 0
+offset_right = 1283.0
 offset_bottom = 499.0
 theme_override_fonts/font = ExtResource("4_ifefo")
 theme_override_font_sizes/font_size = 91

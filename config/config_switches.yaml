@@ -30,7 +30,10 @@ switches:
   s_right_inlane:
     number: 12
     tags: playfield_active
-  s_action:
+  s_left_inlane:
     number: 13
+    tags: playfield_active
+  s_action:
+    number: 14
     tags: action
     

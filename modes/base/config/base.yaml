@@ -18,11 +18,20 @@ sound_player:
     WoL1:
       bus: music
 
+#added widgets might break 28JAN
 slide_player:
   mode_base_started: base
+  
 
 variable_player:
+
+      
+      
   s_right_inlane_active:
     score: 100
-  s_left_flipper_active:
-    score: 1000
+    minerals: 100
+  s_left_inlane_active:
+    score: 1025
+    gas: 50
+
+    

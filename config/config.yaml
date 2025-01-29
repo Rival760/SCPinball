@@ -27,8 +27,8 @@ flippers:
 
 displays:
   window:
-    width: 800
-    height: 600
+    height: 1080
+    width: 1920
 
 config:
   - config_switches.yaml
@@ -43,9 +43,12 @@ modes:
   - base
   - hero_select
 
-#slide_player:
-  #init_done: attract
-  #ball_started:
-    #widgets:
-      #type: text
-      #text: PLAYER (number) BALL (ball)
+slide_player:
+  mode_attract_started: attract
+
+
+player_vars:
+  minerals:
+    initial_value: 200
+  gas:
+    initial_value: 150
