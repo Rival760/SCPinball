@@ -15,7 +15,7 @@ event_player:
 
 sound_player:
   mode_base_started:
-    terran:
+    WoL1:
       bus: music
 
 slide_player:

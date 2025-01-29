@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dk5ujfkr0ylh7"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_fog0k"]
-[ext_resource type="Texture2D" uid="uid://ccann7rtjtepo" path="res://data/images/attract.png" id="2_3pfdu"]
+[ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="4_ifefo"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_oww14"]
-[ext_resource type="Texture2D" uid="uid://dt0xllmqqs15n" path="res://data/images/hO7WPLx.png" id="5_mtgnm"]
+[ext_resource type="Texture2D" uid="uid://ccrg5nplj3jh5" path="res://data/images/Jim_Raynor.jpg" id="6_2jut1"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_42e6u"]
-[ext_resource type="Texture2D" uid="uid://dldbiqdf8ypcw" path="res://data/images/kXr2oRC.png" id="6_t7twd"]
+[ext_resource type="Texture2D" uid="uid://n0c0qjk13754" path="res://data/images/Kerrigan.jpg" id="7_huta8"]
 
 [node name="hero_select" type="Control"]
 layout_mode = 3
@@ -14,41 +14,42 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_fog0k")
 
-[node name="hero_select" type="Sprite2D" parent="."]
-position = Vector2(589, 516)
-texture = ExtResource("2_3pfdu")
-
 [node name="MPFCarousel" type="Node2D" parent="."]
 script = ExtResource("4_oww14")
+carousel_name = "hero_select"
 
 [node name="Jim_Raynor" type="Label" parent="MPFCarousel"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 950.0
+offset_bottom = 499.0
 script = ExtResource("6_42e6u")
 variable_type = 2
 variable_name = "Jim_Raynor"
 
-[node name="HO7wpLx" type="Sprite2D" parent="MPFCarousel/Jim_Raynor"]
-position = Vector2(405, 324)
-scale = Vector2(0.342187, 0.476852)
-texture = ExtResource("5_mtgnm")
+[node name="JimRaynor" type="Sprite2D" parent="MPFCarousel/Jim_Raynor"]
+position = Vector2(656, 540)
+texture = ExtResource("6_2jut1")
 
-[node name="Kerrigan" type="Node2D" parent="MPFCarousel"]
+[node name="Choose Your Hero2" type="Label" parent="MPFCarousel/Jim_Raynor"]
+offset_right = 1577.0
+offset_bottom = 499.0
+theme_override_fonts/font = ExtResource("4_ifefo")
+theme_override_font_sizes/font_size = 91
+text = "Choose your hero"
 
-[node name="Kerrigan" type="Label" parent="MPFCarousel/Kerrigan"]
+[node name="Kerrigan" type="Label" parent="MPFCarousel"]
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("6_42e6u")
 variable_type = 2
 variable_name = "kerrigan"
 
-[node name="Kerrigan_hero" type="Sprite2D" parent="MPFCarousel/Kerrigan/Kerrigan"]
-position = Vector2(844, 777)
-scale = Vector2(0.429427, 0.328241)
-texture = ExtResource("6_t7twd")
+[node name="Kerrigan" type="Sprite2D" parent="MPFCarousel/Kerrigan"]
+position = Vector2(584, 541)
+texture = ExtResource("7_huta8")
 
-[node name="Label" type="Label" parent="MPFCarousel"]
-offset_right = 692.0
+[node name="Choose Your Hero" type="Label" parent="MPFCarousel/Kerrigan"]
+offset_right = 1577.0
 offset_bottom = 499.0
-theme_override_font_sizes/font_size = 126
-text = "Kerrigan"
+theme_override_fonts/font = ExtResource("4_ifefo")
+theme_override_font_sizes/font_size = 91
+text = "Choose your hero"
