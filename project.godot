@@ -23,6 +23,7 @@ MPF="*res://addons/mpf-gmc/mpf_gmc.gd"
 
 window/size/viewport_width=1366
 window/size/viewport_height=768
+window/size/resizable=false
 
 [editor_plugins]
 

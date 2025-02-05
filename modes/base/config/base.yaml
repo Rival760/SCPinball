@@ -28,7 +28,7 @@ variable_player:
       
       
   s_right_inlane_active:
-    score: 100
+    score: 10369
     minerals: 100
   s_left_inlane_active:
     score: 1025

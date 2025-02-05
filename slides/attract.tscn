@@ -1,13 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://eeux2q375heh"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
-[ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract_kerrigan.jpg" id="2_es7b4"]
+[ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract/attract_kerrigan.jpg" id="2_es7b4"]
 [ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_taiwo"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_fyot2"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_nki8n"]
 [ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="6_2spuy"]
-[ext_resource type="Texture2D" uid="uid://dltmernif6mb4" path="res://data/images/Blizzard_Entertainment_2015_blue.svg" id="7_h4bmy"]
-[ext_resource type="Texture2D" uid="uid://bnyavkfekag3i" path="res://data/images/StarCraft_Logo.png" id="8_viow0"]
+[ext_resource type="Texture2D" uid="uid://bnyavkfekag3i" path="res://data/images/attract/StarCraft_Logo.png" id="8_viow0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_woms2"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -46,32 +47,22 @@ vertical_alignment = 2
 script = ExtResource("4_fyot2")
 carousel_name = "attract"
 
+[node name="starcraft_logo" type="Sprite2D" parent="Attract"]
+visible = false
+position = Vector2(665, 442)
+scale = Vector2(1.57, 1.57)
+texture = ExtResource("8_viow0")
+
+[node name="blizzard_logo" type="Sprite2D" parent="Attract"]
+visible = false
+position = Vector2(732, 382)
+texture = SubResource("CompressedTexture2D_woms2")
+
 [node name="mpf_logo" type="Sprite2D" parent="Attract"]
 visible = false
 position = Vector2(675, 529)
 scale = Vector2(2, 2)
 texture = ExtResource("6_2spuy")
-
-[node name="title" type="Label" parent="Attract"]
-visible = false
-offset_top = 280.0
-offset_right = 1364.0
-offset_bottom = 493.0
-theme_override_colors/font_color = Color(0.840347, 0.446505, 7.70092e-07, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/outline_size = 20
-theme_override_constants/shadow_outline_size = 37
-theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 91
-text = "Starcraft Pinball"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="Attract"]
-visible = false
-scale = Vector2(1.285, 1.285)
 
 [node name="credits" type="Label" parent="Attract"]
 visible = false
@@ -91,21 +82,6 @@ vertical_alignment = 1
 script = ExtResource("5_nki8n")
 variable_type = 2
 variable_name = "credits_string"
-
-[node name="blizzard_logo" type="Sprite2D" parent="Attract"]
-visible = false
-position = Vector2(732, 382)
-texture = ExtResource("7_h4bmy")
-
-[node name="starcraft_logo3" type="Sprite2D" parent="Attract"]
-visible = false
-position = Vector2(732, 382)
-texture = ExtResource("7_h4bmy")
-
-[node name="starcraft_logo" type="Sprite2D" parent="Attract"]
-position = Vector2(665, 442)
-scale = Vector2(1.57, 1.57)
-texture = ExtResource("8_viow0")
 
 [node name="last_scores_1p" type="Node2D" parent="Attract"]
 visible = false
