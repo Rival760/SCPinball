@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbl2d05smrvdk"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_adeqt"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_text_input.gd" id="2_6uslk"]
+[ext_resource type="Theme" uid="uid://dnu78lxkwqyj4" path="res://SC2.tres" id="2_vcjn6"]
+
+[node name="HighScore" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_adeqt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 104.0
+offset_right = 1356.0
+offset_bottom = 246.0
+theme = ExtResource("2_vcjn6")
+
+[node name="MPFTextInput" type="HFlowContainer" parent="." node_paths=PackedStringArray("display_node")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 1208.0
+offset_bottom = 506.0
+theme = ExtResource("2_vcjn6")
+script = ExtResource("2_6uslk")
+grid_width = 30
+display_node = NodePath("../RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 192.0
+offset_right = 912.0
+offset_bottom = 452.0
+theme = ExtResource("2_vcjn6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[pulse freq=3.0 color=#ff00ffff ease=-1.0]A[/pulse]"

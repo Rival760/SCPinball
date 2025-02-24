@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk5ujfkr0ylh7"]
+[gd_scene load_steps=10 format=3 uid="uid://dk5ujfkr0ylh7"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_fog0k"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_oww14"]
 [ext_resource type="Texture2D" uid="uid://ccrg5nplj3jh5" path="res://data/images/hero_select/Jim_Raynor.jpg" id="6_2jut1"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_42e6u"]
+[ext_resource type="Theme" uid="uid://yhd7e46acarb" path="res://Game_overlay_White.tres" id="6_o47cl"]
 [ext_resource type="Texture2D" uid="uid://n0c0qjk13754" path="res://data/images/hero_select/Kerrigan.jpg" id="7_huta8"]
 [ext_resource type="FontFile" uid="uid://cn5gp36tail6t" path="res://data/fonts/EuroStyle Normal.ttf" id="7_m2652"]
+[ext_resource type="StyleBox" uid="uid://cc8jms21djra8" path="res://Game_overlay_grey.tres" id="7_t1lbj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqa5i"]
 bg_color = Color(0.0313726, 0.133333, 0.254902, 1)
@@ -27,6 +29,7 @@ script = ExtResource("4_oww14")
 carousel_name = "hero_select"
 
 [node name="Jim_Raynor" type="Label" parent="MPFCarousel"]
+z_index = 5
 offset_right = 950.0
 offset_bottom = 499.0
 script = ExtResource("6_42e6u")
@@ -54,13 +57,19 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 80.0
 offset_top = 130.0
-offset_right = 1363.0
-offset_bottom = 629.0
+offset_right = 776.0
+offset_bottom = 250.0
+theme = ExtResource("6_o47cl")
+theme_override_colors/font_color = Color(0.745098, 0.772549, 0.803922, 1)
 theme_override_fonts/font = ExtResource("7_m2652")
-theme_override_font_sizes/font_size = 91
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = ExtResource("7_t1lbj")
 text = "CHOOSE YOUR HERO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Kerrigan" type="Label" parent="MPFCarousel"]
+z_index = 5
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("6_42e6u")
@@ -71,15 +80,20 @@ variable_name = "kerrigan"
 position = Vector2(584, 541)
 texture = ExtResource("7_huta8")
 
-[node name="Choose Your Hero" type="Label" parent="MPFCarousel/Kerrigan"]
+[node name="Choose Your Hero3" type="Label" parent="MPFCarousel/Kerrigan"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 65.0
-offset_right = 1323.0
-offset_bottom = 564.0
+offset_left = 80.0
+offset_top = 130.0
+offset_right = 776.0
+offset_bottom = 250.0
+theme = ExtResource("6_o47cl")
+theme_override_colors/font_color = Color(0.745098, 0.772549, 0.803922, 1)
 theme_override_fonts/font = ExtResource("7_m2652")
-theme_override_font_sizes/font_size = 91
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = ExtResource("7_t1lbj")
 text = "CHOOSE YOUR HERO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Kerrigan_Bio" type="Label" parent="MPFCarousel/Kerrigan"]
 layout_mode = 0

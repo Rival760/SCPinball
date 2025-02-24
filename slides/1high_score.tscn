@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1pxoskxnx4yb"]
+
+[ext_resource type="Texture2D" uid="uid://c5thhbecmno8y" path="res://data/images/peter-lee-s5wcs-hyrda3.jpg" id="1_xf51w"]
+[ext_resource type="Theme" uid="uid://yhd7e46acarb" path="res://Game_overlay_White.tres" id="2_kix11"]
+[ext_resource type="FontFile" uid="uid://cn5gp36tail6t" path="res://data/fonts/EuroStyle Normal.ttf" id="3_3ectp"]
+[ext_resource type="StyleBox" uid="uid://cc8jms21djra8" path="res://Game_overlay_grey.tres" id="4_eump2"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_600cg"]
+
+[node name="HighScore" type="Node2D"]
+
+[node name="Peter-lee-s5Wcs-hyrda3" type="Sprite2D" parent="."]
+position = Vector2(564, 410)
+scale = Vector2(0.841667, 0.758478)
+texture = ExtResource("1_xf51w")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 114.0
+offset_top = 513.0
+offset_right = 509.0
+offset_bottom = 574.0
+theme = ExtResource("2_kix11")
+theme_override_colors/font_color = Color(0.853177, 0.997408, 0.918658, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3ectp")
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = ExtResource("4_eump2")
+text = "Grand Champion"
+
+[node name="score1_name" type="Label" parent="."]
+offset_left = 555.0
+offset_top = 513.0
+offset_right = 698.0
+offset_bottom = 596.0
+theme = ExtResource("2_kix11")
+theme_override_font_sizes/font_size = 60
+text = "DAX"
+script = ExtResource("5_600cg")
+variable_type = 2
+variable_name = "score1_name"
+
+[node name="score1_value" type="Label" parent="."]
+offset_left = 783.0
+offset_top = 513.0
+offset_right = 954.0
+offset_bottom = 596.0
+theme = ExtResource("2_kix11")
+theme_override_font_sizes/font_size = 60
+text = "10000"
+script = ExtResource("5_600cg")
+variable_type = 2
+variable_name = "score1_value"

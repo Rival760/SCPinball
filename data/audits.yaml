@@ -1,36 +1,47 @@
 events:
-  game_ended: 6
-  game_started: 98
+  game_ended: 10
+  game_started: 144
 missing_switches:
-  s_left_flipper: 5
-  s_start: 3
-  s_trough5: 3
-  s_trough6: 98
-  s_trough_jam: 98
+  s_left_outlane: 14
+  s_left_slingshot: 13
+  s_right_outlane: 14
+  s_right_slingshot: 13
+  s_target: 7
+  s_trough5: 30
+  s_trough6: 130
+  s_trough_jam: 144
 player:
   score:
-    average: 29820
+    average: 27268
     top:
     - 104750
+    - 32800
     - 27750
+    - 26650
     - 25600
+    - 16400
     - 15650
+    - 15375
     - 15250
     - 4800
-    - 4600
-    total: 7
+    total: 11
 switches:
-  s_action: 79
-  s_left_flipper: 544
-  s_left_inlane: 599
-  s_plunger: 139
-  s_right_flipper: 555
-  s_right_inlane: 591
-  s_start: 138
-  s_trough1: 188
-  s_trough2: 129
-  s_trough3: 148
-  s_trough4: 104
-  s_trough5: 26
+  s_action: 164
+  s_left_flipper: 653
+  s_left_inlane: 1087
+  s_left_outlane: 0
+  s_left_slingshot: 0
+  s_plunger: 269
+  s_right_flipper: 678
+  s_right_inlane: 993
+  s_right_outlane: 0
+  s_right_slingshot: 0
+  s_start: 221
+  s_target: 1
+  s_trough1: 356
+  s_trough2: 278
+  s_trough3: 294
+  s_trough4: 272
+  s_trough5: 39
   s_trough6: 0
   s_trough_jam: 0

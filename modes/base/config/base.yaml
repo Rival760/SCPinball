@@ -23,15 +23,16 @@ slide_player:
   mode_base_started: base
   
 
-variable_player:
-
-      
-      
-  s_right_inlane_active:
+variable_player: 
+  my_first_shot_hit:
     score: 10369
     minerals: 100
   s_left_inlane_active:
     score: 1025
     gas: 50
+    supply: 1
 
+#shots:
+  my_first_shot:
+    switch: s_right_inlane
     

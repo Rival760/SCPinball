@@ -17,9 +17,7 @@ switches:
   s_trough4:
     number: 4
   s_trough5:
-    number: 5
-  s_trough6:
-    number: 6
+    number: 100
   s_trough_jam:
     number: 7
   s_plunger:
@@ -36,4 +34,16 @@ switches:
   s_action:
     number: 14
     tags: action
-    
+  s_right_outlane:
+    number: 15
+    tags: playfield_active
+  s_left_outlane:
+    number: 16
+    tags: playfield_active
+  s_target:
+    number: 17
+    tags: playfield_active
+  s_left_slingshot:
+    number: 18
+  s_right_slingshot:
+    number: 19

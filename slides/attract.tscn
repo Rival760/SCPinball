@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://eeux2q375heh"]
+[gd_scene load_steps=14 format=3 uid="uid://eeux2q375heh"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ag2sm"]
+[ext_resource type="VideoStream" path="res://data/videos/StarCraft II Legacy of the Void Opening Cinematic.ogv" id="2_574nh"]
 [ext_resource type="Texture2D" uid="uid://cl22u4w7jco5d" path="res://data/images/attract/attract_kerrigan.jpg" id="2_es7b4"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_am0ht"]
 [ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_taiwo"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="4_fyot2"]
+[ext_resource type="Theme" uid="uid://yhd7e46acarb" path="res://Game_overlay_White.tres" id="5_mnfh1"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_nki8n"]
 [ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="6_2spuy"]
+[ext_resource type="FontFile" uid="uid://cn5gp36tail6t" path="res://data/fonts/EuroStyle Normal.ttf" id="6_iqu0a"]
 [ext_resource type="Texture2D" uid="uid://bnyavkfekag3i" path="res://data/images/attract/StarCraft_Logo.png" id="8_viow0"]
+[ext_resource type="Texture2D" uid="uid://c5thhbecmno8y" path="res://data/images/peter-lee-s5wcs-hyrda3.jpg" id="10_auh8a"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_woms2"]
 
@@ -16,9 +21,44 @@ anchors_preset = 0
 script = ExtResource("1_ag2sm")
 
 [node name="AttractKerrigan" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(688, 448)
 scale = Vector2(0.761, 0.775)
 texture = ExtResource("2_es7b4")
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -237.0
+offset_top = -129.0
+offset_right = 1683.0
+offset_bottom = 959.0
+stream = ExtResource("2_574nh")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("3_am0ht")
+preview_in_editor = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 666.0
+offset_right = 332.0
+offset_bottom = 739.0
+theme = ExtResource("5_mnfh1")
+color = Color(0.0220437, 0.135073, 0.213017, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 302.0
+offset_bottom = 74.0
+theme = ExtResource("5_mnfh1")
+theme_override_colors/font_color = Color(0.610372, 0.945117, 0.961261, 1)
+theme_override_fonts/font = ExtResource("6_iqu0a")
+theme_override_font_sizes/font_size = 68
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Code version" type="Label" parent="."]
 layout_mode = 0
@@ -36,7 +76,7 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 37
 theme_override_fonts/font = ExtResource("3_taiwo")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 16
 text = "Code v 0.1  
 Brice Ambrecht  
 Project JAN 2025 - Current"
@@ -83,10 +123,8 @@ script = ExtResource("5_nki8n")
 variable_type = 2
 variable_name = "credits_string"
 
-[node name="last_scores_1p" type="Node2D" parent="Attract"]
-visible = false
-
-[node name="Player 1 Score" type="Label" parent="Attract/last_scores_1p"]
+[node name="Player 1 Score" type="Label" parent="Attract"]
+z_index = 1
 offset_left = 17.0
 offset_top = 155.0
 offset_right = 582.0
@@ -95,7 +133,7 @@ theme_override_fonts/font = ExtResource("3_taiwo")
 theme_override_font_sizes/font_size = 56
 text = "Player 1 Score"
 
-[node name="player1_score" type="Label" parent="Attract/last_scores_1p/Player 1 Score"]
+[node name="player1_score" type="Label" parent="Attract/Player 1 Score"]
 layout_mode = 0
 offset_left = -3.0
 offset_top = -155.0
@@ -110,6 +148,50 @@ variable_type = 2
 variable_name = "player1_score"
 comma_separate = true
 min_digits = 2
+
+[node name="last_scores_1p" type="Node2D" parent="Attract"]
+
+[node name="high_score_name" type="Label" parent="Attract/last_scores_1p"]
+z_index = 1
+offset_left = 672.0
+offset_top = 224.0
+offset_right = 836.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 71
+text = "DAX"
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "score1_name"
+
+[node name="high_score_value" type="Label" parent="Attract/last_scores_1p"]
+z_index = 1
+offset_left = 916.0
+offset_top = 224.0
+offset_right = 1256.0
+offset_bottom = 404.0
+theme = ExtResource("5_mnfh1")
+theme_override_font_sizes/font_size = 71
+text = "54300"
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "score1_value"
+
+[node name="Label" type="Label" parent="Attract/last_scores_1p"]
+z_index = 1
+offset_left = 672.0
+offset_top = 97.0
+offset_right = 1255.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 71
+text = "Grand Champion"
+script = ExtResource("5_nki8n")
+variable_type = 2
+variable_name = "score1_label"
+
+[node name="high_score" type="Sprite2D" parent="Attract/last_scores_1p"]
+z_index = -1
+position = Vector2(688, 522)
+texture = ExtResource("10_auh8a")
 
 [node name="last_scores_2p" type="Node2D" parent="Attract"]
 visible = false

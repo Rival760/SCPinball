@@ -15,3 +15,16 @@ coils:
     allow_enable: true
   c_trough_eject:
     number: 3
+  c_left_slingshot:
+    number: 11
+  c_right_slingshot:
+    number: 12
+
+#the below screws everything up
+#autofire_coils:  
+  #left_slingshot:
+    #coil: c_left_slingshot
+    #switch: s_left_slingshot
+  #right_slingshot:
+    #coil: c_right_slingshot
+    #switch: s_right_slingshot

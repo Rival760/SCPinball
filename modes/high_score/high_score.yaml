@@ -1,0 +1,56 @@
+#config_version=6
+##! mode: high_score
+# modes/high_score/config/high_score.yaml
+mode:
+  priority: 500
+  start_events: game_ending, start_high_score
+  use_wait_queue: true
+high_score:
+  _overwrite: true
+  enter_initials_timeout: 60
+  award_slide_display_time: 4s
+  # define your high score categories and the awards
+  categories: !!omap
+    - score:
+        - GRAND CHAMPION
+        - HIGH SCORE 1
+        - HIGH SCORE 2
+        - HIGH SCORE 3
+        - HIGH SCORE 4
+        - HIGH SCORE 5
+        - HIGH SCORE 6
+        - HIGH SCORE 7
+        - HIGH SCORE 8
+    - #loops:
+        - LOOP CHAMP
+  # set the defaults
+  defaults:
+    score:
+      - KER: 10000
+      - ZER: 900
+      - JIM: 800
+      - MSK: 700
+      - ART: 600
+      - DKA: 500
+      - FNX: 400
+      - TYC: 300
+      - TAS: 200
+    #loops:
+      - JAN: 42
+# optional: change the slides (you can omit all the following)
+
+slide_player:
+  high_score_enter_initals: high_score_enter_initials
+  high_score_award_display: score_award_display_end
+
+event_player:
+  s_left_flipper_active:
+    text_input:
+      action: left
+  s_right_flipper_active:
+    text_input:
+      action: right
+  s_start_active:
+    text_input:
+      action: select
+

@@ -1,16 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnqjaam7i8r1b"]
+[gd_scene load_steps=15 format=3 uid="uid://dnqjaam7i8r1b"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_nmca0"]
 [ext_resource type="VideoStream" path="res://data/videos/SC2_video.ogv" id="2_s2jgr"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_dbsdi"]
-[ext_resource type="FontFile" uid="uid://itjrbyf3fioa" path="res://data/fonts/Starcraft Normal.ttf" id="3_vn11m"]
 [ext_resource type="FontFile" uid="uid://cn5gp36tail6t" path="res://data/fonts/EuroStyle Normal.ttf" id="4_5wpbi"]
+[ext_resource type="Theme" uid="uid://yhd7e46acarb" path="res://Game_overlay_White.tres" id="5_04g0n"]
 [ext_resource type="Texture2D" uid="uid://dyafoiwtjh4yq" path="res://data/images/base/minerals.PNG" id="5_a2kmv"]
 [ext_resource type="Texture2D" uid="uid://cnjv3quigwend" path="res://data/images/base/vespenegas.PNG" id="6_1vrg1"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_eq8na"]
+[ext_resource type="StyleBox" uid="uid://cc8jms21djra8" path="res://Game_overlay_grey.tres" id="7_lfh6b"]
 [ext_resource type="Texture2D" uid="uid://ca4css134fxt0" path="res://data/images/base/StarCraft II Screenshot 2025.01.29 - 23.41.10.96.png" id="8_qarj7"]
 [ext_resource type="Texture2D" uid="uid://dr6iscopneuib" path="res://data/images/base/Game_Console.png" id="9_6qxdu"]
 [ext_resource type="Texture2D" uid="uid://brqhel12oxxfj" path="res://data/images/base/supply.PNG" id="10_kgvbl"]
+
+[sub_resource type="Theme" id="Theme_0er6p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vapld"]
 bg_color = Color(0.023229, 0.00365247, 0, 1)
@@ -27,6 +30,7 @@ offset_top = -211.0
 offset_right = 1741.0
 offset_bottom = 1229.0
 scale = Vector2(0.85, 0.85)
+theme = SubResource("Theme_0er6p")
 stream = ExtResource("2_s2jgr")
 autoplay = true
 loop = true
@@ -39,6 +43,51 @@ position = Vector2(682, 510)
 scale = Vector2(0.78, 0.78)
 texture = ExtResource("8_qarj7")
 
+[node name="Player Score2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 619.0
+offset_top = 560.0
+offset_right = 759.0
+offset_bottom = 603.0
+theme = ExtResource("5_04g0n")
+theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = ExtResource("7_lfh6b")
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player Score3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 560.0
+offset_right = 588.0
+offset_bottom = 603.0
+theme = ExtResource("5_04g0n")
+theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = ExtResource("7_lfh6b")
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player Score4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 560.0
+offset_right = 926.0
+offset_bottom = 603.0
+theme = ExtResource("5_04g0n")
+theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = ExtResource("7_lfh6b")
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Score_Player_1" type="Label" parent="."]
 layout_mode = 0
 offset_left = 283.0
@@ -49,7 +98,35 @@ theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 121
 theme_override_styles/normal = SubResource("StyleBoxFlat_vapld")
-text = "123"
+text = "123,456"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_eq8na")
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="Player Score" type="Label" parent="Score_Player_1"]
+layout_mode = 0
+offset_top = 114.0
+offset_right = 649.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 31
+text = "Player Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Static Score P1" type="Label" parent="Score_Player_1"]
+layout_mode = 0
+offset_top = -52.0
+offset_right = 140.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vapld")
+text = "123,456"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_eq8na")
@@ -58,40 +135,61 @@ variable_name = "score"
 comma_separate = true
 min_digits = 2
 
-[node name="Player 1 Score" type="Label" parent="Score_Player_1"]
+[node name="Static Score P2" type="Label" parent="Score_Player_1"]
 layout_mode = 0
-offset_top = 114.0
-offset_right = 649.0
-offset_bottom = 157.0
+offset_left = 165.0
+offset_top = -52.0
+offset_right = 305.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 31
-text = "Player 1 Score"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vapld")
+text = "Press Start"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Player 2 Score" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 788.0
-offset_top = 659.0
-offset_right = 1332.0
-offset_bottom = 747.0
-theme_override_fonts/font = ExtResource("3_vn11m")
-theme_override_font_sizes/font_size = 51
-text = "Player 2 Score"
-
-[node name="Score_Player_2" type="Label" parent="Player 2 Score"]
-layout_mode = 0
-offset_left = 126.0
-offset_top = -129.0
-offset_right = 1165.0
-offset_bottom = -7.0
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 121
-text = "123"
 script = ExtResource("6_eq8na")
 variable_type = 5
 variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="Static Score P3" type="Label" parent="Score_Player_1"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = -52.0
+offset_right = 487.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vapld")
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_eq8na")
+variable_type = 6
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="Static Score P4" type="Label" parent="Score_Player_1"]
+layout_mode = 0
+offset_left = 503.0
+offset_top = -52.0
+offset_right = 654.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vapld")
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_eq8na")
+variable_type = 7
+variable_name = "score"
+comma_separate = true
 min_digits = 2
 
 [node name="Minerals" type="Label" parent="."]
@@ -192,17 +290,21 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 34
-text = "63"
+text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_eq8na")
-variable_name = "gas"
+variable_name = "supply"
 
 [node name="GameConsole" type="Sprite2D" parent="."]
+light_mask = 0
+visibility_layer = 4
 z_index = 5
+z_as_relative = false
 position = Vector2(684, 609)
 scale = Vector2(1.385, 1.385)
 texture = ExtResource("9_6qxdu")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="GameConsole"]
 z_index = -1

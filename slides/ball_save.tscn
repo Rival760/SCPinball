@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://70dledka1uk3"]
+
+[ext_resource type="Texture2D" uid="uid://dk3qff6iojwnr" path="res://data/images/watercolor_art.png" id="1_g77tk"]
+[ext_resource type="FontFile" uid="uid://cn5gp36tail6t" path="res://data/fonts/EuroStyle Normal.ttf" id="2_blmqq"]
+
+[node name="BallSave" type="Node2D"]
+
+[node name="D8k9l7t-60Eb8284-82c6-446b-9a99-ee7a0b74b321" type="Sprite2D" parent="."]
+position = Vector2(681, 386.5)
+scale = Vector2(0.453849, 0.381164)
+texture = ExtResource("1_g77tk")
+
+[node name="Label" type="Label" parent="D8k9l7t-60Eb8284-82c6-446b-9a99-ee7a0b74b321"]
+offset_left = -1501.0
+offset_top = -346.0
+offset_right = 1501.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(0.853177, 0.997408, 0.918658, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = -1
+theme_override_fonts/font = ExtResource("2_blmqq")
+theme_override_font_sizes/font_size = 426
+text = "Ball Save!"
+horizontal_alignment = 1
+vertical_alignment = 1

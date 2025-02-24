@@ -2,6 +2,7 @@
 
 hardware:
   platform: smart_virtual
+  #platform: virtual_pinball #this is for the VPX bridge
 
 
 
@@ -42,6 +43,7 @@ modes:
   - attract
   - base
   - hero_select
+  - high_score
 
 slide_player:
   mode_attract_started: attract
@@ -52,3 +54,5 @@ player_vars:
     initial_value: 200
   gas:
     initial_value: 150
+  supply:
+    initial_value: 10
