@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnqjaam7i8r1b"]
+[gd_scene load_steps=16 format=3 uid="uid://dnqjaam7i8r1b"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_nmca0"]
 [ext_resource type="VideoStream" path="res://data/videos/SC2_video.ogv" id="2_s2jgr"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4css134fxt0" path="res://data/images/base/StarCraft II Screenshot 2025.01.29 - 23.41.10.96.png" id="8_qarj7"]
 [ext_resource type="Texture2D" uid="uid://dr6iscopneuib" path="res://data/images/base/Game_Console.png" id="9_6qxdu"]
 [ext_resource type="Texture2D" uid="uid://brqhel12oxxfj" path="res://data/images/base/supply.PNG" id="10_kgvbl"]
+[ext_resource type="Texture2D" uid="uid://dsl30c6djc7mr" path="res://data/images/base/Console_Player_Augment.PNG" id="13_xy0s0"]
 
 [sub_resource type="Theme" id="Theme_0er6p"]
 
@@ -25,10 +26,10 @@ script = ExtResource("1_nmca0")
 
 [node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_left = -179.0
-offset_top = -211.0
-offset_right = 1741.0
-offset_bottom = 1229.0
+offset_left = -67.0
+offset_top = -205.0
+offset_right = 1853.0
+offset_bottom = 1235.0
 scale = Vector2(0.85, 0.85)
 theme = SubResource("Theme_0er6p")
 stream = ExtResource("2_s2jgr")
@@ -44,27 +45,27 @@ scale = Vector2(0.78, 0.78)
 texture = ExtResource("8_qarj7")
 
 [node name="Player Score2" type="Label" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 619.0
-offset_top = 560.0
-offset_right = 759.0
+offset_left = 626.0
+offset_top = 569.0
+offset_right = 766.0
 offset_bottom = 603.0
 theme = ExtResource("5_04g0n")
 theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 31
-theme_override_styles/normal = ExtResource("7_lfh6b")
 text = "Press Start"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player Score3" type="Label" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 448.0
-offset_top = 560.0
+offset_top = 569.0
 offset_right = 588.0
 offset_bottom = 603.0
-theme = ExtResource("5_04g0n")
 theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 31
@@ -74,16 +75,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player Score4" type="Label" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 786.0
-offset_top = 560.0
+offset_top = 569.0
 offset_right = 926.0
 offset_bottom = 603.0
 theme = ExtResource("5_04g0n")
 theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 31
-theme_override_styles/normal = ExtResource("7_lfh6b")
 text = "Press Start"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -113,14 +114,17 @@ offset_right = 649.0
 offset_bottom = 157.0
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 31
-text = "Player Score"
+text = "PLAYER SCORE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Static Score P1" type="Label" parent="Score_Player_1"]
+visible = false
+z_index = 1
 layout_mode = 0
-offset_top = -52.0
-offset_right = 140.0
+offset_left = 11.0
+offset_top = -39.0
+offset_right = 138.0
 offset_bottom = -1.0
 theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
@@ -136,9 +140,11 @@ comma_separate = true
 min_digits = 2
 
 [node name="Static Score P2" type="Label" parent="Score_Player_1"]
+visible = false
+z_index = 1
 layout_mode = 0
 offset_left = 165.0
-offset_top = -52.0
+offset_top = -39.0
 offset_right = 305.0
 offset_bottom = -1.0
 theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
@@ -155,9 +161,11 @@ comma_separate = true
 min_digits = 2
 
 [node name="Static Score P3" type="Label" parent="Score_Player_1"]
+visible = false
+z_index = 1
 layout_mode = 0
 offset_left = 336.0
-offset_top = -52.0
+offset_top = -39.0
 offset_right = 487.0
 offset_bottom = -1.0
 theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
@@ -174,9 +182,11 @@ comma_separate = true
 min_digits = 2
 
 [node name="Static Score P4" type="Label" parent="Score_Player_1"]
+visible = false
+z_index = 1
 layout_mode = 0
 offset_left = 503.0
-offset_top = -52.0
+offset_top = -48.0
 offset_right = 654.0
 offset_bottom = -1.0
 theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
@@ -191,110 +201,6 @@ variable_type = 7
 variable_name = "score"
 comma_separate = true
 min_digits = 2
-
-[node name="Minerals" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1023.0
-offset_top = 11.0
-offset_right = 1091.0
-offset_bottom = 34.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 29
-text = "Minerals"
-
-[node name="Minerals2" type="Sprite2D" parent="Minerals"]
-position = Vector2(-17, 42)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_a2kmv")
-
-[node name="minerals" type="Label" parent="Minerals"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 22.0
-offset_right = 58.0
-offset_bottom = 69.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 34
-text = "22"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_eq8na")
-variable_name = "minerals"
-
-[node name="Gas" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1161.0
-offset_top = 11.0
-offset_right = 1201.0
-offset_bottom = 35.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 29
-text = "Gas"
-
-[node name="Vespenegas" type="Sprite2D" parent="Gas"]
-position = Vector2(-28, 44)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_1vrg1")
-
-[node name="gas" type="Label" parent="Gas"]
-layout_mode = 0
-offset_top = 23.0
-offset_right = 40.0
-offset_bottom = 70.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 34
-text = "63"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_eq8na")
-variable_name = "gas"
-
-[node name="Supply" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1272.0
-offset_top = 11.0
-offset_right = 1335.0
-offset_bottom = 35.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 29
-text = "Supply"
-
-[node name="Supply2" type="Sprite2D" parent="Supply"]
-position = Vector2(-17, 43)
-scale = Vector2(0.268, 0.25)
-texture = ExtResource("10_kgvbl")
-
-[node name="Supply" type="Label" parent="Supply"]
-layout_mode = 0
-offset_top = 24.0
-offset_right = 63.0
-offset_bottom = 71.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4_5wpbi")
-theme_override_font_sizes/font_size = 34
-text = "12"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_eq8na")
-variable_name = "supply"
 
 [node name="GameConsole" type="Sprite2D" parent="."]
 light_mask = 0
@@ -334,10 +240,10 @@ color = Color(0, 0, 0, 1)
 [node name="Ball #" type="Label" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 944.0
-offset_top = 608.0
-offset_right = 1045.0
-offset_bottom = 759.0
+offset_left = 87.0
+offset_top = 581.0
+offset_right = 188.0
+offset_bottom = 732.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -367,6 +273,7 @@ text = "2"
 horizontal_alignment = 1
 script = ExtResource("6_eq8na")
 variable_name = "ball"
+metadata/_edit_lock_ = true
 
 [node name="time" type="Label" parent="."]
 z_index = 5
@@ -394,3 +301,133 @@ theme_override_colors/font_color = Color(0.47451, 0.776471, 0.588235, 1)
 theme_override_fonts/font = ExtResource("4_5wpbi")
 theme_override_font_sizes/font_size = 30
 text = "1:23"
+
+[node name="ConsolePlayerAugment1" type="Sprite2D" parent="."]
+position = Vector2(362, 581)
+scale = Vector2(1.16897, 1)
+texture = ExtResource("13_xy0s0")
+metadata/_edit_lock_ = true
+
+[node name="ConsolePlayerAugment2" type="Sprite2D" parent="."]
+position = Vector2(532, 581)
+scale = Vector2(1.16897, 1)
+texture = ExtResource("13_xy0s0")
+metadata/_edit_lock_ = true
+
+[node name="ConsolePlayerAugment3" type="Sprite2D" parent="."]
+position = Vector2(701, 581)
+scale = Vector2(1.16897, 1)
+texture = ExtResource("13_xy0s0")
+metadata/_edit_lock_ = true
+
+[node name="ConsolePlayerAugment4" type="Sprite2D" parent="."]
+position = Vector2(860, 581)
+scale = Vector2(1.16897, 1)
+texture = ExtResource("13_xy0s0")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 1371.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 1052
+theme_override_constants/margin_top = 40
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 60
+
+[node name="Minerals" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 29
+text = "Minerals"
+
+[node name="Minerals2" type="Sprite2D" parent="MarginContainer/HFlowContainer/Minerals"]
+position = Vector2(-17, 42)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_a2kmv")
+
+[node name="minerals" type="Label" parent="MarginContainer/HFlowContainer/Minerals"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 22.0
+offset_right = 58.0
+offset_bottom = 69.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 34
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_eq8na")
+variable_name = "minerals"
+
+[node name="Gas" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 29
+text = "Gas"
+
+[node name="Vespenegas" type="Sprite2D" parent="MarginContainer/HFlowContainer/Gas"]
+position = Vector2(-28, 44)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_1vrg1")
+
+[node name="gas" type="Label" parent="MarginContainer/HFlowContainer/Gas"]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 40.0
+offset_bottom = 70.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 34
+text = "63"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_eq8na")
+variable_name = "gas"
+
+[node name="Supply" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 29
+text = "Supply"
+
+[node name="Supply2" type="Sprite2D" parent="MarginContainer/HFlowContainer/Supply"]
+position = Vector2(-17, 43)
+scale = Vector2(0.268, 0.25)
+texture = ExtResource("10_kgvbl")
+
+[node name="Supply" type="Label" parent="MarginContainer/HFlowContainer/Supply"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 63.0
+offset_bottom = 71.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_5wpbi")
+theme_override_font_sizes/font_size = 34
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_eq8na")
+variable_name = "supply"

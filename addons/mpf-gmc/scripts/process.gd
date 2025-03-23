@@ -91,7 +91,7 @@ func _check_mpf():
   # Detect if the pid is still alive
   self.log.debug("Checking MPF PID %s...", mpf_pid)
   var output = []
-  OS.execute("ps", ["-p", str(mpf_pid), "-o", "state="], output, true, true)
+  OS.execute("ps", [mpf_pid, "-o", "state="], output, true, true)
   if not output:
     return
   var result = output[0].strip_edges()

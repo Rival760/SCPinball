@@ -10,6 +10,7 @@ virtual_platform_start_active_switches:
   - s_trough1
   - s_trough2
   - s_trough3
+  - s_trough4
 
 playfields:
   playfield:
@@ -35,6 +36,7 @@ config:
   - config_switches.yaml
   - config_ball_devices.yaml
   - config_coils.yaml
+  #- config_lights.yaml
 
 game:
   add_player_switch_tag: add_player
@@ -42,8 +44,10 @@ game:
 modes:
   - attract
   - base
-  - hero_select
+  #- hero_select
   - high_score
+  - bumpers
+  - hurryup
 
 slide_player:
   mode_attract_started: attract
@@ -55,4 +59,4 @@ player_vars:
   gas:
     initial_value: 150
   supply:
-    initial_value: 10
+    initial_value: 15

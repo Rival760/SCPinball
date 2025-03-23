@@ -13,6 +13,8 @@ mode_settings:
     - mpf_logo
     - blizzard_logo
     - starcraft_logo
+    - high_score
+
     
   next_item_events: s_right_flipper_active, timer_attract_carousel_timer_complete
   previous_item_events: s_left_flipper_active
@@ -40,3 +42,6 @@ timers:
         action: stop
       - event: flipper_cradle_release
         action: restart
+
+show_player:
+  mode_attract_started1: attract_light_show

@@ -11,28 +11,35 @@ mode:
 event_player:
   mode_base_started:
     - start_hero_select_mode
+    - start_mode_bumpers
   s_start_active: sw_add_player
+  mode_base_will_stop:
+    - stop_mode_bumpers
+    - stop_hero_select_mode
+  right_bumper_shot_hit: start_mode_hurryup
 
 sound_player:
   mode_base_started:
     WoL1:
       bus: music
 
-#added widgets might break 28JAN
-slide_player:
-  mode_base_started: base
-  
+
 
 variable_player: 
-  my_first_shot_hit:
+  my_first_shot_hit: #this was s_right_inlane_active
     score: 10369
     minerals: 100
   s_left_inlane_active:
     score: 1025
     gas: 50
     supply: 1
-
-#shots:
+  
+shots:
   my_first_shot:
     switch: s_right_inlane
-    
+
+  right_bumper_shot:
+    switches: s_right_bumper
+
+slide_player:
+  mode_base_started: base

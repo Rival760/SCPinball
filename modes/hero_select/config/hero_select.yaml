@@ -26,8 +26,12 @@ mode_settings:
       string: "Kerrigan"
       action: set
 
+sound_player:
+  mode_attract_started:
+    terran:
+      bus: music
 
 slide_player:
   mode_hero_select_started: hero_select
-  #widgets:
+ 
         

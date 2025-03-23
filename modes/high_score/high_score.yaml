@@ -7,7 +7,7 @@ mode:
   use_wait_queue: true
 high_score:
   _overwrite: true
-  enter_initials_timeout: 60
+  enter_initials_timeout: 10
   award_slide_display_time: 4s
   # define your high score categories and the awards
   categories: !!omap
@@ -40,8 +40,9 @@ high_score:
 # optional: change the slides (you can omit all the following)
 
 slide_player:
-  high_score_enter_initals: high_score_enter_initials
-  high_score_award_display: score_award_display_end
+  _overwrite: true
+  highscore_enter_initals: highscore_enter_initials
+  highscore_award_display: score_award_display_end
 
 event_player:
   s_left_flipper_active:
@@ -53,4 +54,3 @@ event_player:
   s_start_active:
     text_input:
       action: select
-

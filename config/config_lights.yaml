@@ -1,0 +1,19 @@
+#config_version=6
+
+#fast:
+  #rgb_buffer: 3
+  #hardware_led_fade_time: 10ms
+
+#lights:
+#Port 1
+  #led_0:
+    start_Channel: 0-0
+    subtype: led
+    type: rgb
+    tags: playfield_inserts
+
+  #led_1:
+    previous: led_0
+    subtype: led
+    type: rgb
+    tags: playfield_inserts

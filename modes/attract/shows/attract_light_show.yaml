@@ -1,0 +1,7 @@
+#show_version=6
+- time: 0
+  lights:
+    l_light1: '7A2AB9'
+- time: '+1'
+  lights:
+    l_light1: '0000C8'

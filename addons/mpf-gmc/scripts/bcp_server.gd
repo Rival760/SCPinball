@@ -49,6 +49,8 @@ var _thread: Thread
 ###
 
 func _ready() -> void:
+  # Set the port for BCP connections
+  port = MPF.get_config_value("gmc", "bcp_port", port)
   # Wait until a server is actively listening before polling for clients
   set_process(false)
 
@@ -132,10 +134,11 @@ func send_event(event_name: String, bounceback: bool = true) -> void:
   if bounceback:
     self._bounceback(event_name)
 
-
 func send_event_with_args(event_name: String, args: Dictionary, bounceback: bool = true) -> void:
   if not args or args.is_empty():
     return self.send_event(event_name)
+  if args.has("name") and args['name'] != event_name:
+    self.log.warning("'name' is a reserved key in send_event_with_args(). Arg value '%s' for event '%s' will be discarded.", [args['name'], event_name])
   var event_string = _bcp_parse.encode_event_args(event_name, args)
   _send("trigger?%s" % event_string)
   if bounceback:
@@ -144,6 +147,15 @@ func send_event_with_args(event_name: String, args: Dictionary, bounceback: bool
 func send_switch(switch_name: String, state: int = -1) -> void:
   var message = "switch?name=%s&state=%s" % [switch_name, state]
   _send(message)
+
+func send_bytes(trigger_name: String, data: PackedByteArray, kwargs: Dictionary = {}) -> void:
+  var params = []
+  for k in kwargs.keys():
+    params.append("%s=%s" % [k, kwargs[k]])
+  # !!! Due to MPF BCP parsing limitations 'bytes' MUST be the last arg
+  params.append("bytes=%d" % data.size())
+  self._send("%s?%s" % [trigger_name, "&".join(params)])
+  self._client.put_data(data)
 
 ## Send a specialized Service Mode command to MPF
 func send_service(subcommand: String, values: PackedStringArray = []) -> void:
@@ -279,10 +291,10 @@ func _thread_poll(_userdata=null) -> void:
       call_deferred("stop")
       return
 
-    var cstat = _client.get_status()
-    if cstat != StreamPeerTCP.Status.STATUS_CONNECTED:
+    if not _client or _client.get_status() != StreamPeerTCP.Status.STATUS_CONNECTED:
       self.log.info("BCP client disconnected.")
       _mutex.unlock()
+
       call_deferred("stop")
       return
 

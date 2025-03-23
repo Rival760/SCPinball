@@ -45,5 +45,13 @@ switches:
     tags: playfield_active
   s_left_slingshot:
     number: 18
+    tags: playfield_active
   s_right_slingshot:
     number: 19
+    tags: playfield_active
+  s_left_bumper:
+    number:
+    tags: playfield_active
+  s_right_bumper:
+    number:
+    tags: playfield_active

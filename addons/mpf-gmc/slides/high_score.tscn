@@ -10,10 +10,12 @@ script = ExtResource("1_adeqt")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 691.0
+offset_left = 120.0
 offset_top = 104.0
-offset_right = 1356.0
-offset_bottom = 246.0
+offset_right = 641.0
+offset_bottom = 469.0
+rotation = 0.000129263
+text = "High Score!"
 
 [node name="MPFTextInput" type="HFlowContainer" parent="." node_paths=PackedStringArray("display_node")]
 layout_mode = 0
@@ -27,9 +29,10 @@ display_node = NodePath("../RichTextLabel")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 664.0
+offset_left = 691.0
 offset_top = 72.0
-offset_right = 1264.0
+offset_right = 1291.0
 offset_bottom = 332.0
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
+text = "[pulse freq=3.0 color=#ff00ffff ease=-1.0]A[/pulse]"

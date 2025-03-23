@@ -36,6 +36,7 @@ var _trackers = {}
 var version: String
 
 signal game_started
+signal machine_update(variable_name, value)
 signal player_update(variable_name, value)
 signal player_added(total_players)
 signal credits
@@ -45,6 +46,14 @@ func _init() -> void:
 	randomize()
 
 func add_player(kwargs: Dictionary) -> void:
+	## MPF has inconsistencies in how player_added events are sent, and
+	# may send two events: one with a 'num' kwarg and one with 'player_num'.
+	# For consistency, check the number against the player count to avoid dupes.
+	# TODO: Fix MPF's inconsistent/duplicate player_added events.
+	var player_number = kwargs.get("num", kwargs.get("player_num", 0))
+	var current_player_count = players.size()
+	if player_number <= current_player_count:
+		return
 	players.append({
 		"score": 0,
 		"number": kwargs.player_num
@@ -68,6 +77,7 @@ func stash_preloaded_scene(path: String, scene: PackedScene):
 func reset() -> void:
 	players = []
 	player = {}
+	num_players = 0
 	for tracker in self._trackers.values():
 		if tracker["_reset_on_game_end"]:
 			tracker.clear()
@@ -104,6 +114,7 @@ func update_machine(kwargs: Dictionary) -> void:
 
 	else:
 		machine_vars[var_name] = value
+		emit_signal("machine_update", var_name, value)
 		if var_name.begins_with("credits"):
 			emit_signal("credits", var_name, kwargs)
 		elif var_name.ends_with("_volume"):
